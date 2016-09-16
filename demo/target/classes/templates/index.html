@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8" />
+  <title>Thymeleaf Sample</title>
+  <style type="text/css">
+  	.empTable { border-collapse: collapse; }
+  </style>
+</head>
+<body>
+  <h1>Thymeleaf Sample</h1>
+  <p th:text="${msg}"/>
+  <table class="empTable" border="1">
+  	<tr>
+  		<th>empno</th>
+  		<th>ename</th>
+  		<th>job</th>
+  		<th>mgr</th>
+  		<th>hiredate</th>
+  		<th>sal</th>
+  		<th>comm</th>
+  		<th>deptno</th>
+  	</tr>
+  	<tr th:each="item, stat : ${emp}" th:object="${item}">
+  		<td th:text="*{empno}">empno</td>
+  		<td th:text="*{ename}">ename</td>
+  		<td th:text="*{job}">job</td>
+  		<td th:text="*{mgr}">mgr</td>
+  		<td th:text="*{hiredate}">hiredate</td>
+  		<td th:text="*{sal}">sal</td>
+  		<td th:text="*{comm}">comm</td>
+  		<td th:text="*{deptno}">deptno</td>
+  	</tr>
+  </table>
+</body>
+</html>
